@@ -1,0 +1,110 @@
+use FTP107;
+
+/*VENDOR*/
+
+INSERT INTO VENDOR(V_ID,V_NAME,V_USERNAME,V_PASSWORD,V_EMAIL,V_PHONE,V_ADDRESS)
+VALUES(500,'Kushal','kushal1','kushal1','abc@123','1765690080','4/9,thanigai'),
+		(501,'Rishi','rishi12','rishi12','abc@123','1234690780','90/7,vallam'),
+        (502,'Rakhi','rakhi12','rakhi12','abc@123','1766594597','09/8,chropet'),
+        (503,'Trisha','trgh12','trgh12','abc@123','8563478497','7/8,rajinagar'),
+        (504,'snega','sne134','sne134','abc@123','5483903737','67/5,tnagar'),
+        (505,'Radha','radha123','radha123','abc@123','9874563210','67/5,tnagar'),
+        (506,'Shayam','shayam123','shayam123','abc@123','9632587410','61/5,tnagar'),
+        (507,'Pratibha','pratibha123','pratibha123','abc@123','8974563251','56/2,navallur,chennai'),
+        (508,'Anne Jeroldin','anne123','anne123','abc@123','7894563210','no2 tnagar chennai'),
+        (509,'Anne','ane123','abc@123','abc@123','8521479630','no2 egatoor chennai'),
+        (510,'Jeroldin','jeroldin123','jeroldin123','abc@123','8796548213','no2 khazipattur chennai'),
+        (511,'jef','jef123','jef123','abc@123','8624793510',' pudur chennai'),
+        (512,'Tom','Tom123','tom123','abc@123','7531598426',' sirusiri chennai');
+
+/*customer*/
+
+INSERT INTO CUSTOMER VALUES(1,'RISHIKESH','RISHI','ABC@123',500.60,'RISHI@GMAIL.COM', '9654123649','NO1 NAVALUR CHENNAI-78');
+INSERT INTO CUSTOMER VALUES(2,'RAKHI','RAKHI','ABC@123',250.90,'RAKHI@GMAIL.COM', '9841223649','1/46 K.NAGAR CHENNAI-38'),
+(3,'ANNE JORELDON','ANNE','ABC@123',309.00,'ANNEJ@GMAIL.COM', '9784561751','NO 39 MAMBALAM CHENNAI-90'),
+(4,'KUSHAL','KUSHAL','ABC@123',500.60,'KUSHAL@GMAIL.COM', '9665741234','NO90 NEHRUROAD KILPAUK'),
+(5,'PRATHIBA','PRATHIBA','ABC@123',85.95,'@GMAIL.COM', '9675614031','NO 20,SAIDAPET CHENNAI-98'),
+(6,'MADHUMITHA','MADHU','ABC@123',900.60,'MAD@GMAIL.COM', '9658465120','NO5 USMAN ROAD T.NAGAR '),
+(7,'KEERTHANA','KERTHI','ABC@123',775.90,'KEERTHU@GMAIL.COM','9754621307','NO789 OMRCHENNAI-44'),
+(8,'APARNA','APARNA','ABC@123',100.00,'APARNA@GMAIL.COM', '985141952','NO 209 ASHOK PILLAR '),
+(9,'ABHISHEK','ABHI','ABC@123',560.10,'ABHI@GMAIL.COM', '6020456178','NO784 CMBT CHENNAI-71'),
+(10,'ASHWINRAM','ASHWIN','ABC@123',540.70,'ASH@GMAIL.COM', '7001364552','NO 112 ARCCOT CHENNAI-01'),
+(11,'RANJITHA','RANJI','ABC@123',700.30,'RANJI@GMAIL.COM', '7010254546','NO6 T.NAGAR CHENNAI-45'),
+(12,'NAKUL','NAKUL','ABC@123',55.40,'NAKUL@GMAIL.COM', '6898754127','NO 76 OMR CHENNAI-66'),
+(13,'SHIVANARAYAN','SHIVA','ABC@123',86.60,'SHIV@GMAIL.COM', '8456123308','NO41 OMR CHENNAI-41'),
+(14,'GAURI SHARMA','GAURI','ABC@123',145.70,'GAURI@GMAIL.COM', '997101010','NO4 M.NAGAR CHENNAI-21'),
+(15,'PRIYA VEER','PRIYA','ABC@123',46.80,'PRIYA@GMAIL.COM', '96699696','NO87 SANTHOME CHENNAI-14');
+
+
+
+/*menu*/
+
+/*vendor1*/
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1000,'Idly Sambar',500,20,'South Indian','2 idly ',45.0),
+      (1001,'Masala Dosa',500,40,'South Indian','1 masala',56.0);
+
+
+/*vendor 2*/
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1002,'Chicken Biryani',501,100,'Biryani','1 plate',78.0),
+      (1003,'Chicken Kebab',501,80,'Chicken Dry','250 gms',88.0);
+
+
+
+/*vendor 3*/
+
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1004,'Veg Birayani',502,50,'Biryani ','1 plate',80.0)
+      (1005,'Kadai Paneer',502,120,'North Indian','1 Kadai Paneer',92.0);
+
+
+/*vendor 4*/
+
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1006,'Pongal',503,20,'South Indian','1 Pongal',64.0),
+      (1007,'Roti Curry',503,40,'North Indian','2 Roti',78.0);
+
+/*vendor 5*/
+
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1008,'Paneer Fried Rice',504,120,'Biryani','1 Paneer Rice',97.0),
+      (1009,'Chicken Fried Rice',504,130,'Biryani','1 Chicken Rice',88.0);
+
+
+/*vendor 6*/
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1010,'Mutton Fried Rice',505,100,'Biryani','Fried Rice',102.0),
+      (1011,'Aloo Parotta',505,55,'North Indian','2 Aloo Parotta',50.0);
+
+
+/*vendor 7*/
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1012,'Gobi parotta',506,60,'North Indian','2 parotta',67.0),
+      (1013,'North Indian Meals',506,70,'North Indian','1 lassi',93.0);
+
+/*vendor 8*/
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1014,'North Indian Meals',507,60,'North Indian','1 lassi',40.0),
+      (1015,'South Indian Meals',507,70,'South Indian','2 poori',64.0);
+
+/*vendor 9*/
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1016,'Chicken Kebab',508,40,'Chicken Dry','250 gms',78.0),
+      (1017,'Veg Birayani',508,50,'Biryani and Rice','1 plate veg birayani',50.0);
+
+
+/*vendor 10*/
+
+insert into menu(FOOD_ID,FOOD_NAME,V_ID,PRICE,FOOD_CAT,FOOD_DESC,FOOD_CAL)
+VALUES(1018,'Pongal',509,30,'South Indian','1 Pongal',120.0),
+      (1019,'Roti Curry',509,50,'North Indian','2 Roti 1 cup curry',33.0);

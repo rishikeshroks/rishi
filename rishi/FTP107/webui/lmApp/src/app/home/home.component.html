@@ -1,0 +1,90 @@
+<style>
+    table,
+    th,
+    td {
+
+        border: 1px solid rgb(11, 12, 12);
+        border-collapse: collapse;
+        padding: 5px;
+    }
+
+    table th {
+        background-color: wheat;
+    }
+
+    table tr:nth-child(even) {
+
+        background-color: transparent;
+    }
+
+    table tr:nth-child(odd) {
+
+        background-color: whitesmoke;
+
+    }
+</style>
+
+<body class="content" id="example1" href="app.component.cssstyle">
+
+    <div>
+        <div  class="row"  >
+          <div class="col-sm-2 col-md-2 col-lg-2" 
+                style="align-content:center">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" 
+                style="align-content:center">
+                   <a href="/custlogin"><button [disabled]="loading" 
+                       class="btn btn-primary">Customer Login</button></a>&nbsp;
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4" 
+                    style="align-content: right" >
+                     <a href="/vendorlogin"><button [disabled]="loading" 
+                        class="btn btn-primary">Vendor Login</button></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- <marquee style="font-size: 40px;">
+    <b style="color:blue">Canteen Management System</b>
+    </marquee>  -->
+        <div class="col-sm-2 col-md-2 col-lg-2"></div>
+        <div class="col-sm-8 col-md-8 col-lg-8">
+
+            <table border="1" align="center">
+                <thead>
+                    <tr>
+                        <th>Food ID</th>
+                        <th>Food Image</th>
+                        <th>Food Name</th>
+                        <th>Vendor ID</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Description</th>
+                        <th>Calories</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let menu of menus'>
+                        <td>
+                            <b>{{menu.foodId}}</b></td>
+                        <td><img src='assets\{{menu.foodId}}.jpg' alt="FoodImages" width="100" height="60"></td>
+                        <td><b>{{menu.foodName}}</b></td>
+                        <td><b>{{menu.vid}}</b></td>
+                        <td><b>{{menu.price | currency : 'INR'}}</b></td>
+                        <td><b>{{menu.foodCat}}</b></td>
+                        <td><b>{{menu.foodDesc}}</b></td>
+                        <td><b>{{menu.foodCal}}</b></td>
+
+                    </tr>
+                    <tr *ngIf="!menus || menus.length==0">
+                        <td colspan="5">
+                            No foodlist to display
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2"></div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,79 @@
+
+<div>
+  <table id = "vendoracceptdeny" class="table-bordered table-hover table-responsive" align="center" width="700">
+    <style>
+      table, th, td {
+        border: 1px solid black;
+         }
+      th {
+          cursor: pointer;
+         }
+    </style>
+    <thead>
+      <tr bgcolor="">
+        <th>Order ID</th>
+        <th>Customer ID</th>
+        <th>Vendor ID</th>
+        <th>Food ID</th>
+        <th>Quantity</th>
+        <th>TotalPrice</th>
+        <th>Total Calories</th>
+        <th>Order  Status</th>
+        
+        <th>Order Time</th>
+        <th>Order Date</th>
+        <th >Order Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor='let ord of orders;'>
+            <input type="checkbox" name='ord.oid'
+            [value]='ord.oid'
+            (click)=toggleSelect(ord,$event.target.checked)/>
+            {{ord.oid}}
+          <td>{{ord.custId}}</td>
+          <td>{{ord.venId}}</td>
+        <td>{{ord.foodId}}</td>
+        <td>{{ord.qty}}</td>
+        <td>{{ord.totPrice | currency : 'INR'}}</td>
+        <td>{{ord.totCal}}</td>
+        <td>{{ord.ostatus}}</td>
+        
+        <td>{{ord.otime}}</td>
+        <td>{{ord.odate | date :'dd/MM/yyyy'}}</td>
+        <input type="text" class="form-control" [disabled]='!ord.isSelected' name='oreason'
+        [(ngModel)]='ord.oreason'/>
+        
+      </tr>
+      <tr *ngIf="!orders || orders.length==0">
+
+        <td colspan="11">
+
+          No vendorhistory list to display
+
+        </td>
+
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+<br>
+<div>
+  
+  <input type="button" 
+  value= "Accept"
+  class="btn btn-primary"
+  (click) = "acceptorder()"
+  (click) = " myFunction()" />
+ &nbsp;&nbsp;&nbsp;
+ <input type="button" 
+ value= "Deny"
+ class="btn btn-primary"
+ (click) = "denyorder()"
+ (click) = " myFunction()" />
+</div>
+<br><br>
+   

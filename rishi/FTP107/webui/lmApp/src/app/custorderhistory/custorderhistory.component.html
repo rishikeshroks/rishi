@@ -1,0 +1,43 @@
+
+
+  <div>
+    <table id = "customerorderhistory" class = "table table-bordered table hover" align="center">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer ID</th>
+          <th>Vendor ID</th>
+          <th>Food ID</th>
+          <th>Quantity</th>
+          <th>Total Price</th>
+          <th>Total Calories</th>
+          <th>Order Status</th>
+          
+          <th>Order Time</th>
+          <th>Order Date</th>
+          <th>Order Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let ord of orders'>
+          <td><b>{{ord.oid}}</b></td>
+          <td><b>{{ord.custId}}</b></td>
+          <td><b>{{ord.venId}}</b></td>
+          <td><b>{{ord.foodId}}</b></td>
+          <td><b>{{ord.qty}}</b></td>
+          <td><b>{{ord.totPrice | currency : 'INR'}}</b></td>
+          <td><b>{{ord.totCal}}</b></td>
+          <td><b>{{ord.ostatus}}</b></td>
+          
+          <td><b>{{ord.otime}}</b></td>
+          <td><b>{{ord.odate | date :'dd/MM/yyyy'}}</b></td>
+          <td><b>{{ord.oreason}}</b></td>
+        </tr>
+        <tr *ngIf="!orders || orders.length==0">
+          <td colspan="5">
+            No foodlist to display
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

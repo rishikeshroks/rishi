@@ -1,0 +1,69 @@
+<style>
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("C:\Users\Hvuser\workspace\FTP107\webui\lmApp\src\assets\Background1.jpg");
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+}
+
+
+
+
+
+</style>
+
+<body>
+<div style="background-image: url('../assets/venlog.jpg'); image-rendering: auto; image-resolution: 1024X840" >
+  <br><br><br>
+  <h1  align ="center"style="font-size: 40px;">
+      <b style="color:black">Vendor Login Page</b>
+  </h1>
+    <br><br><br><br>
+      <form class="container"[formGroup]="loginForm " (ngSubmit)="onSubmit()">
+        <div class="form-group">
+           <label style="color:white ; font-size: 25px">USERNAME</label>
+           <input type="text" placeholder="Enter your Username" formControlName="venUsername" class="form-control" />
+          
+           <div *ngIf= "f.venUsername.touched && f.venUsername.errors"
+                  class="alert alert-warning">
+                  <div *ngIf = "f.venUsername.errors.required">Username is required
+                  </div>
+        </div></div>
+        <div class="form-group">
+           <label style="color:white ; font-size: 25px ">PASSWORD</label>
+           <input type="password" placeholder="Enter your Password" formControlName="venPassword" class="form-control" />
+                   <div *ngIf= "f.venPassword.touched && f.venPassword.errors"
+                          class="alert alert-warning">
+                    <div *ngIf = "f.venPassword.errors.required">
+                      Password is required
+                    </div>
+                     <div *ngIf="f.venPassword.errors.minlength">
+                         password must be at least 4 characters!!!!!
+                      </div>
+                    </div>
+        </div>
+        <div class="form-group">
+           <button class="btn btn-primary" >Login</button> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+           <a routerLink="/home"> <button [disabled]="loading" class="btn btn-primary">Cancel</button></a>
+       </div>
+       
+     </form>
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+   </div>
+  </body>

@@ -1,0 +1,76 @@
+<head>
+<style>
+    table, th , td {
+    border: 1px solid ;
+    border-collapse: collapse;
+    padding: 10px;
+    }
+
+    table th{
+        background-color:transparent;
+    
+      }
+      
+ 
+   tr:hover {background-color: #ddd;}
+  
+    </style>
+    </head>
+
+    <table class="table class bordered table-hover" id="menu">
+        <thead>  
+        <tr>  
+            <th><b>Food Id</b></th>
+            <th>Food Name</th>
+            <th>Vendor Id</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Calories</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Total Calories</th>
+        </tr>  
+        </thead>  
+        <tbody>  
+        <tr *ngFor='let menu of menus; trackBy: trackByFn(index,menu)'> 
+            <input type="checkbox" name='menu.foodId'
+                   [value]='menu.foodId'
+                   (click)=toggleSelect(menu,$event.target.checked)/>
+                   <b>{{menu.foodId}}</b>
+                   <td><b>{{menu.foodName}}</b></td>
+                   <td><b>{{menu.vid}}</b></td>
+                   <td><b>{{menu.price | currency : 'INR'}}</b></td>
+                   <td><b>{{menu.foodCat}}</b></td>
+                   <td><b>{{menu.foodDesc}}</b></td>
+                   <td><b>{{menu.foodCal}}</b></td>
+
+      <input type="number" class="form-control" [disabled]='!menu.isSelected'
+      [(ngModel)]="menu.qty" name="qty"
+      #qty="ngModel" min="1" required>
+     <span *ngIf = "qty.invalid && qty.touched"
+      style = "color: red">qty is required...</span>
+      <td><b>{{toggleselectprice(menu)}}</b></td> 
+      <td><b>{{toggleselectcalories(menu)}}</b></td> 
+      </tr> 
+     <tr *ngIf="!menus || menus.length==0">  
+     <td colspan="6">  
+      No menus to display  
+      </td>  
+      </tr>  
+      </tbody>  
+      </table>
+       <hr>
+       <br>
+       <label><b>Total Price :</b></label>
+       <b>{{totalOrderPrice | currency : 'INR'}}</b>
+       
+       <br>
+       <label><b>Total Calories :</b></label>
+        <b>{{totalOrderCal}}</b><br/>
+      
+       <button class="btn btn-primary" (click) = 'addOrder()'(click) = 'myFunction()'> Add Order</button>
+        <h1 *ngIf = 'postS'>
+         {{poststr.msg}}
+        </h1>
+        <br><br><br><br>

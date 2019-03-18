@@ -1,0 +1,29 @@
+<body>
+  <div style="background-image: url('../assets/cust1dash.jpg'); image-rendering: auto; image-resolution: 1024X840">
+               <br><br>
+          <h1 align="center" style="font-size: 80px;">
+          <b style="color:black">Welcome </b>
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="../assets/v2.png" alt="">
+      </h1>
+      
+      <div class="container">
+            <div>
+            
+            <nav class="navbar navbar-transparent">
+              <ul class="nav navbar-nav">
+                <li>
+                        <a routerLink="vendororderhistory"><button [disabled]="loading" class="btn btn-primary">Vendor History</button></a>
+                </li> 
+                <li>
+                    <a routerLink="vendoracceptdeny"><button [disabled]="loading" class="btn btn-primary">Accept OR Deny</button></a>
+                </li>
+                
+                <li>
+
+                  <a routerLink="/home"> <button [disabled]="loading" class="btn btn-primary">Logout</button></a>
+
+              </li>
+             </ul>
+            </nav>
+          </div>
+      <router-outlet></router-outlet>
